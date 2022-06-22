@@ -1,2 +1,2 @@
 # Latex
-my Latex examples
+There are my LaTeX examples
