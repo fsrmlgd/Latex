@@ -1,0 +1,102 @@
+\documentclass[fontset=windows]{ctexart}
+\usepackage{amsmath}
+\begin{document}
+
+\begin{center}
+	$\xi = \frac{(x-x_0)*2}{d} - 1 $\\
+	$\eta = \frac{(y-y_0)*2}{d} -1 $\\
+	$N_1(\xi,\eta) = \frac{1}{4}(1-\xi)(1-\eta)$\\
+	$N_2(\xi,\eta) = \frac{1}{4}(1+\xi)(1-\eta)$\\
+	$N_3(\xi,\eta) = \frac{1}{4}(1+\xi)(1+\eta)$\\
+	$N_4(\xi,\eta) = \frac{1}{4}(1-\xi)(1+\eta)$\\
+
+	\begin{eqnarray}
+		\frac{\partial(N_1)}{\partial(x)} &=& \frac{\partial(N_1)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(x)}+\frac{\partial(N_1)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(x)}  \nonumber    \\
+		~&=& -\frac{1}{4}(1-\eta)\cdot\frac{2}{d} \nonumber
+		\label{eq:1}
+	\end{eqnarray}
+	\begin{eqnarray}
+		\frac{\partial(N_1)}{\partial(y)} &=& \frac{\partial(N_1)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(y)}+\frac{\partial(N_1)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(y)}  \nonumber    \\
+		~&=& -\frac{1}{4}(1-\xi)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+
+	\begin{eqnarray}
+		\frac{\partial(N_2)}{\partial(x)} &=& \frac{\partial(N_2)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(x)}+\frac{\partial(N_2)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(x)}  \nonumber    \\
+		~&=& \frac{1}{4}(1-\eta)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+	\begin{eqnarray}
+		\frac{\partial(N_2)}{\partial(y)} &=& \frac{\partial(N_2)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(y)}+\frac{\partial(N_2)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(y)}  \nonumber    \\
+		~&=& -\frac{1}{4}(1+\xi)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+
+	\begin{eqnarray}
+		\frac{\partial(N_3)}{\partial(x)} &=& \frac{\partial(N_3)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(x)}+\frac{\partial(N_3)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(x)}  \nonumber    \\
+		~&=& \frac{1}{4}(1+\eta)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+	\begin{eqnarray}
+		\frac{\partial(N_3)}{\partial(y)} &=& \frac{\partial(N_3)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(y)}+\frac{\partial(N_3)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(y)}  \nonumber    \\
+		~&=& \frac{1}{4}(1+\xi)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+
+	\begin{eqnarray}
+		\frac{\partial(N_4)}{\partial(x)} &=& \frac{\partial(N_4)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(x)}+\frac{\partial(N_4)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(x)}  \nonumber    \\
+		~&=& -\frac{1}{4}(1+\eta)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+	\begin{eqnarray}
+		\frac{\partial(N_4)}{\partial(y)} &=& \frac{\partial(N_4)}{\partial(\xi)}\cdot \frac{\partial(\xi)}{\partial(y)}+\frac{\partial(N_4)}{\partial(\eta)}\cdot\frac{\partial(\eta)}{\partial(y)}  \nonumber    \\
+		~&=& \frac{1}{4}(1-\xi)\cdot\frac{2}{d} \nonumber
+	\end{eqnarray}
+
+	\begin{eqnarray}
+		\dot{\varepsilon}_{ij}^p &=& \sum_{g = 1}^{n_g} \frac{1}{2} (N_{g,j}^p V_i^g+N_{g,i}^p V_j^g) \nonumber
+	\end{eqnarray}
+
+	\begin{equation}
+		\dot{\varepsilon}_{ij}^p = \frac{1}{2}\sum_{g=1}^{n_g}{
+		\left[\begin{array}{cc}
+				{\frac{\partial{N}}{\partial{x}}\cdot V_x \cdot 2}                                    & {\frac{\partial{N}}{\partial{y}}\cdot V_x}+{\frac{\partial{N}}{\partial{x}}\cdot V_y} \\
+				{\frac{\partial{N}}{\partial{y}}\cdot V_x}+{\frac{\partial{N}}{\partial{x}}\cdot V_y} & {\frac{\partial{N}}{\partial{y}}\cdot V_y \cdot 2}
+			\end{array}
+			\right ]} \nonumber
+	\end{equation}
+
+	\begin{equation}
+		\sigma = \sigma_m + S_{ij} = {
+				\left[\begin{array}{cc}
+						\frac{\sigma_{11}+\sigma_{22}}{2} & 0                                 \\
+						0                                 & \frac{\sigma_{11}+\sigma_{22}}{2}
+					\end{array}
+					\right ]} + {
+		\left[\begin{array}{cc}
+				\frac{\sigma_{11}-\sigma_{22}}{2} & \sigma_{12}                        \\
+				\sigma_{21}                       & \frac{-\sigma_{11}+\sigma_{22}}{2}
+			\end{array}
+			\right ]}\nonumber
+	\end{equation}
+
+	\begin{equation}
+		\dot{\varepsilon}_{kk} = \frac{\varepsilon_{11}+\varepsilon_{22}}{2} , K = \frac{E}{3(1-2\mu)},\delta_{ij} = {
+				\left[\begin{array}{cc}
+						1 & 0 \\
+						0 & 1
+					\end{array}
+					\right ]}\nonumber
+	\end{equation}
+
+	\begin{equation}
+		S_{ij}^{'} = S_{ij} + \Delta t \cdot 2G(\dot{\varepsilon}_{ij}-\frac{1}{2}\dot{\varepsilon}_{kk}\delta_{ij}) \nonumber
+	\end{equation}
+
+	\begin{equation}
+		\sigma_{m}^{'} = \sigma_{m} + \Delta t K \dot{\varepsilon}_{kk} \nonumber
+	\end{equation}
+\end{center}
+
+\begin{align}
+	a^2+b^2 & = c^2 \\
+	a+b     & = c
+\end{align}
+
+
+
+\end{document}
